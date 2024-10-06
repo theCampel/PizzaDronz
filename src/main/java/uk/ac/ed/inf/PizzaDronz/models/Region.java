@@ -25,6 +25,10 @@ public class Region {
         double firstLat = vertices[0].getLat();
 
         for (LngLat lngLat : vertices) {
+            // Check if each vertex is valid
+            if (!lngLat.isValid()){
+                return false;
+            }
             if (lngLat.getLng() != firstLng) {
                 allSameLng = false;
             }

@@ -1,11 +1,10 @@
 package uk.ac.ed.inf.PizzaDronz.models;
 
 public class LngLatPairRequest {
-    private LngLat position1;
-    private LngLat position2;
+    private LngLat position1 = null;
+    private LngLat position2 = null;
 
     // Getters and Setters
-
     public LngLat getPosition1() {
         return position1;
     }

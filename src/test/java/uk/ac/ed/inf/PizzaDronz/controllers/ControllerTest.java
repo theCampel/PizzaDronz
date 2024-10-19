@@ -225,7 +225,7 @@ class ControllerTest {
     // Test isInRegion with a valid region and point inside
     @Test
     public void testIsInRegion_ValidPointInsideRegion() throws Exception {
-        String json = "{\"position\":{\"lng\":-3.1899133333333336,\"lat\":55.945129},\"region\":{\"vertices\":[{\"lng\":-3.188267,\"lat\":55.944154},{\"lng\":-3.192473,\"lat\":55.946233},{\"lng\":-3.189000,\"lat\":55.945000}]}}";
+        String json = "{\"position\":{\"lng\":-3.1899133333333336,\"lat\":55.945129},\"region\":{\"vertices\":[{\"lng\":-3.188267,\"lat\":55.944154},{\"lng\":-3.192473,\"lat\":55.946233},{\"lng\":-3.189000,\"lat\":55.945000},{\"lng\":-3.188267,\"lat\":55.944154}]}}";
 
         mockMvc.perform(post("/isInRegion")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -237,7 +237,7 @@ class ControllerTest {
     // Test isInRegion with a valid region and point outside
     @Test
     public void testIsInRegion_ValidPointOutsideRegion() throws Exception {
-        String json = "{\"position\":{\"lng\":-3.195000,\"lat\":55.950000},\"region\":{\"vertices\":[{\"lng\":-3.188267,\"lat\":55.944154},{\"lng\":-3.192473,\"lat\":55.946233},{\"lng\":-3.189000,\"lat\":55.945000}]}}";
+        String json = "{\"position\":{\"lng\":-3.195000,\"lat\":55.950000},\"region\":{\"vertices\":[{\"lng\":-3.188267,\"lat\":55.944154},{\"lng\":-3.192473,\"lat\":55.946233},{\"lng\":-3.189000,\"lat\":55.945000}, {\"lng\":-3.188267,\"lat\":55.944154}]}}";
         mockMvc.perform(post("/isInRegion")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(json))

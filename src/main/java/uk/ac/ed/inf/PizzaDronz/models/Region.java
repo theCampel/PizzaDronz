@@ -15,7 +15,14 @@ public class Region {
     }
 
     public boolean isValid(){
+        // We're going with prof's definition of a "closed" region as a valid one
+        // This means we'll also check that the first and last vertices are the same.
         if (vertices == null || vertices.length <= 2) {
+            return false;
+        }
+
+        // Check if the first and last vertices are the same
+        if (!vertices[0].equals(vertices[vertices.length - 1])) {
             return false;
         }
 

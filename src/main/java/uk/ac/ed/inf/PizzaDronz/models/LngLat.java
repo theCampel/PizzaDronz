@@ -29,6 +29,12 @@ public class LngLat {
         this.lat = lat;
     }
 
+    // Check if a pair of longitude and latitude is are equals
+    public boolean equals(LngLat other){
+        return lng.equals(other.getLng()) && lat.equals(other.getLat());
+    }
+
+    // Use @JSONIgnore cos otherwise it would be included in the JSON response
     @JsonIgnore
     public boolean isValid(){
         return lng != null && lat != null &&
